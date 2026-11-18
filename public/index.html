@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Retention & Erasure Console</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="app-head">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <div>
+        <h1>Retention &amp; Erasure</h1>
+        <p class="brand-sub">Multi-tenant lifecycle console</p>
+      </div>
+    </div>
+    <div class="head-controls">
+      <label class="tenant-picker">
+        <span>Tenant</span>
+        <select id="tenant-select" aria-label="Select tenant"></select>
+      </label>
+      <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle colour theme" title="Toggle theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+          <path d="M12 3v1M12 20v1M4.2 4.2l.7.7M19.1 19.1l.7.7M3 12h1M20 12h1M4.2 19.8l.7-.7M19.1 4.9l.7-.7"/>
+          <circle cx="12" cy="12" r="4"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button role="tab" data-tab="overview" class="tab active" aria-selected="true">Overview</button>
+    <button role="tab" data-tab="requests" class="tab" aria-selected="false">Requests &amp; proofs</button>
+    <button role="tab" data-tab="policies" class="tab" aria-selected="false">Policies</button>
+    <button role="tab" data-tab="audit" class="tab" aria-selected="false">Audit trail</button>
+  </nav>
+
+  <main id="app" class="app" aria-live="polite">
+    <div class="loading">Loading tenant data…</div>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

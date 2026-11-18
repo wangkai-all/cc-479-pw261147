@@ -1,0 +1,18 @@
+{
+  "name": "retention-erasure-console",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Multi-tenant retention and verifiable deletion console",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed": "node scripts/seed.js",
+    "reset": "node scripts/seed.js --reset",
+    "test": "node --test test/",
+    "demo": "node scripts/demo.js"
+  }
+}
